@@ -1,6 +1,6 @@
 # 03 JavaScript: Password Generator
 
-Project 3 for berkley coding bootcamp.
+Project 3 for berkley coding bootcamp, a JS random password generator.
 
 
 ```
