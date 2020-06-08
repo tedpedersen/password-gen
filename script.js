@@ -19,7 +19,7 @@ function writePassword() {
   //set up the min and max length  
   var minPassLength = 8;
   var passLength = 128;
-  var promptLength = prompt("How long 8-128 Characters.");
+  var promptLength = prompt("How long do you want yur password? Choose between 8-128 characters.");
 
 
   //validation of length 
@@ -31,7 +31,7 @@ function writePassword() {
   }
 
   //set up speacial characters
-  var confirmChar = confirm("Would you like to use special chars?");
+  var confirmChar = confirm("Would you like include lowercase, uppercase, numeric, and/or special characters in your password?");
   if (confirmChar == true) {
     var charList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!/#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
     generatePassword();
