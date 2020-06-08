@@ -14,65 +14,47 @@
 // WHEN the password is generated
 // THEN the password is either displayed in an alert or written to the page
 
+function writePassword() {
 
-var minPassLength = 8;
-var passLength = 128;
-var promptLength = prompt("How long 8-128 Characters.");
-
-//validation of length 
-if (promptLength > passLength) {
-  alert("Must be less then 128 Charaters!")
-}
-if (promptLength < minPassLength) {
-  alert("Must be greater than 8 Charaters!")
-}
-
-var confirmChar = confirm("Would you like to use special chars?");
-if (confirmChar == true) {
-  var charList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!/#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
-  console.log(charList);
-  generatePassword()
-} else {
-  var charList = "abcdefghijklmnopqrstuvwxyz";
-  console.log(charList);
-  generatePassword()
-}
+  //set up the min and max length  
+  var minPassLength = 8;
+  var passLength = 128;
+  var promptLength = prompt("How long 8-128 Characters.");
 
 
-function generatePassword() {
-  retVal = "";
-  for (var i = 0, n = charList.length; i < promptLength; ++i) {
-      retVal += charList.charAt(Math.floor(Math.random() * n));
+  //validation of length 
+  if (promptLength > passLength) {
+    alert("Must be less then 128 Charaters!")
   }
-  console.log(retVal);
-  return retVal;
+  if (promptLength < minPassLength) {
+    alert("Must be greater than 8 Charaters!")
+  }
+
+  //set up speacial characters
+  var confirmChar = confirm("Would you like to use special chars?");
+  if (confirmChar == true) {
+    var charList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!/#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+    generatePassword();
+  } else {
+    var charList = "abcdefghijklmnopqrstuvwxyz";
+    generatePassword();
+  }
+  
+  //generate the password
+  function generatePassword() {
+    var passwordText = document.querySelector("#password");
+    retVal = "";
+    for (var i = 0, n = charList.length; i < promptLength; ++i) {
+        retVal += charList.charAt(Math.floor(Math.random() * n));
+    }
+    passwordText.value = retVal;
+    return retVal;
+  }
+
 }
-
-
-
-// function generatePassword() {
-//   var length = 8,
-//       charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-//      
-//       retVal = "";
-//   for (var i = 0, n = charset.length; i < length; ++i) {
-//       retVal += charset.charAt(Math.floor(Math.random() * n));
-//   }
-//   return retVal;
-//   console.log(retVal);
-// }
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
