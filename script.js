@@ -29,6 +29,7 @@ function writePassword() {
   if (promptLength < minPassLength) {
     alert("Must be greater than 8 Charaters!")
   }
+  else {
 
   //set up speacial characters
   var confirmChar = confirm("Would you like include lowercase, uppercase, numeric, and/or special characters in your password?");
@@ -39,6 +40,7 @@ function writePassword() {
     var charList = "abcdefghijklmnopqrstuvwxyz";
     generatePassword();
   }
+}
   
   //generate the password
   function generatePassword() {
