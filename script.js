@@ -16,7 +16,7 @@ function writePassword() {
   else {
 
   //set up speacial characters
-  var confirmChar = confirm("Would you like include lowercase, uppercase, numeric, and/or special characters in your password?");
+  var confirmChar = confirm("Would you like to include lowercase, uppercase, numeric, and/or special characters in your password?");
   if (confirmChar == true) {
     var charList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!/#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
     generatePassword();
