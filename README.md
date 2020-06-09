@@ -2,6 +2,8 @@
 
 Project 3 for berkley coding bootcamp, a JS random password generator.
 
+![Screenshot](https://raw.githubusercontent.com/tedpedersen/password-gen/master/screenshot.png)
+
 
 ```
 GIVEN I need a new, secure password
