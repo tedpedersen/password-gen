@@ -3,7 +3,7 @@ function writePassword() {
   //set up the min and max length  
   var minPassLength = 8;
   var passLength = 128;
-  var promptLength = prompt("How long do you want yur password? Choose between 8-128 characters.");
+  var promptLength = prompt("How long do you want your password? Enter between 8-128 characters.");
 
 
   //validation of length 
