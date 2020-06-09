@@ -10,7 +10,7 @@ function writePassword() {
   if (promptLength > passLength) {
     alert("Must be less then 128 Charaters!")
   }
-  if (promptLength < minPassLength) {
+  else if (promptLength < minPassLength) {
     alert("Must be greater than 8 Charaters!")
   }
   else {
